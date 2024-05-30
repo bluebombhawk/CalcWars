@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Calculus Wars</title>
+{% endblock %}
+
+{% block body %}
+  <section id="main">
+  <h1>Calculus Wars</h1>
+  <h2>We Differentiate The Strong From The Weak</h2>
+  <h1 style="display:none" id="dead">GAME OVER</h1>
+
+  {% if username == "" %}
+
+  <div class="form">
+    <form id="form" action="/" method="POST">
+      <label for="username">Name</label><br>
+      {% if username_error is defined %}
+      <p class="red">{{username_error}}</p>
+      {% endif %}
+      <input type="text" id="username" name="username" value=""><br><br>
+      <input type="submit" value="join" id="join">
+    </form>
+  </div>   
+  <div class="z"></div>
+  <script src="{{ url_for('static',filename='js/join.js') }}"></script>
+  {% else %}
+  <h4>{{username}}</h4>
+  <canvas id="game_display" width="400px" height="400px"></canvas>
+  <span id="inputpad" class="form">
+    This text should be next to the canvas
+    <input type="button" id="fire" name="fire" value="fire"> <input id="equation" name="equation" value={{equation}}>
+  </span>
+  <div class="form">
+    <form id="form" action="/" method="POST">
+        <input id="pointxs" type="hidden" value="{{player_curve.xs}}">
+        <input id="pointys" type="hidden" value="{{player_curve.ys}}">
+        <input id="myx" type="hidden" value="{{playerx}}">
+        <input id="myy" type="hidden" value="{{playery}}">
+        <input id="code" name="code" type="hidden" value="{{code}}">
+        <input type="hidden" id="send_vector" name="send_vector" value="0,0,0,0"></div>
+        <input type="hidden" id="username" name="username" value="{{username}}">
+        <input type="submit" style="display:none" id="submit">
+    </form>
+  </div>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="{{ url_for('static',filename='js/run.js') }}"></script>
+  {% endif %}
+  </section>
+{% endblock %}
+
+</html>

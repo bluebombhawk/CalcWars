@@ -1,0 +1,70 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  #main{
+    display:float;
+    flex-flow:center;
+  }
+  h1,h2{
+    text-align:center;
+  }
+  h1{
+    font-size:5rem;
+  }
+  h2{
+    font-size:3rem;
+  }
+  form{
+    
+    margin: 0 auto; 
+    width:15.625rem;
+  }
+  #username{
+    width:15.625rem;
+  }
+  #join{
+    font-size:2rem;
+    font-family:helvetica;
+    background-color:lime;
+    color:black;
+    border-radius:.25rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    padding-top:.5rem;
+    padding-bottom:.5rem;
+    transition:.5s;
+    width:15.625rem;
+  }
+  #join:hover,#join:active{
+    font-family:helvetica;
+    background-color:green;
+    color:black;
+    border-radius:.25rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    padding-top:.5rem;
+    padding-bottom:.5rem;
+    transition:.5s;
+    transform:translate(2px,2px);
+  }
+  canvas{
+    border:1px solid black;
+  }
+  .red{
+    color:red;
+  }
+  #fire{
+    font-size:24px;
+    background-color:limegreen;
+    padding:30px,60px;
+    color:white;
+    border: 1px solid black;
+    border-radius:15px;
+    transition:.25s;
+  }
+  #fire:hover{
+    background-color:green;
+    transition:.25s;
+  }
